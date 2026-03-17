@@ -1,0 +1,51 @@
+# Виртуальное окружение
+whispX_venv/
+.venv/
+venv/
+env/
+ENV/
+
+
+# Файлы с секретами и настройками
+.env
+.env.local
+.env.*.local
+
+# Кэш Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Результаты работы (чтобы не засорять репозиторий)
+results/
+*.json
+*.log
+*.mp3
+*.mp4
+
+# Архивы и временные файлы
+*.rar
+*.zip
+*.7z
+*.tar.gz
+*.bak
+*.tmp
+*.temp
+
+# IDE и редакторы
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Установочные файлы
+*.whl
+*.egg-info/
+dist/
+build/
