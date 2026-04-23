@@ -22,6 +22,9 @@ __pycache__/
 
 # Результаты работы (чтобы не засорять репозиторий)
 results/
+uploads/
+outputs/
+Voice/
 *.json
 *.log
 *.mp3
