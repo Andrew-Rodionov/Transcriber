@@ -1,3 +1,3 @@
 @echo off
-start "" wscript.exe "%~dp0Start.vbs"
+start "" powershell.exe -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File "%~dp0bootstrap.ps1"
 exit /b

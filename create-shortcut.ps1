@@ -9,9 +9,9 @@ if (-not $DesktopDirectory -or -not (Test-Path -LiteralPath $DesktopDirectory -P
 $shell = New-Object -ComObject WScript.Shell
 $shortcutPath = Join-Path $DesktopDirectory 'T-BCM Desktop.lnk'
 $shortcut = $shell.CreateShortcut($shortcutPath)
-# WScript hides the console of Start-desktop.bat; the installer is never invoked.
-$shortcut.TargetPath = Join-Path $env:SystemRoot 'System32\wscript.exe'
-$shortcut.Arguments = '"' + (Join-Path $ProjectDirectory 'Launch-desktop.vbs') + '"'
+# pythonw starts the same application as Start-desktop.bat without a console.
+$shortcut.TargetPath = Join-Path $ProjectDirectory '.venv-desktop\Scripts\pythonw.exe'
+$shortcut.Arguments = '"' + (Join-Path $ProjectDirectory 'desktop_main.py') + '"'
 $shortcut.WorkingDirectory = $ProjectDirectory
 $shortcut.Description = 'T-BCM desktop (Start-desktop.bat)'
 $shortcut.IconLocation = (Join-Path $env:SystemRoot 'System32\telephon.cpl') + ',0'

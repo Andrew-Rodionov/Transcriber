@@ -89,7 +89,7 @@ try {
     Status 'Creating desktop shortcut...'
     & (Join-Path $project 'create-shortcut.ps1') -ProjectDirectory $project
     Status 'Starting application. Next time use the T-BCM Desktop shortcut.'
-    Start-Process -FilePath (Join-Path $env:SystemRoot 'System32\wscript.exe') -ArgumentList @(('"' + (Join-Path $project 'Launch-desktop.vbs') + '"')) -WorkingDirectory $project -WindowStyle Hidden
+    Start-Process -FilePath $pythonw -ArgumentList @(('"' + (Join-Path $project 'desktop_main.py') + '"')) -WorkingDirectory $project -WindowStyle Hidden
 } catch {
     $_ | Out-String | Add-Content -LiteralPath $logPath -Encoding UTF8
     [System.Windows.Forms.MessageBox]::Show("Could not start T-BCM.`n$($_.Exception.Message)`n`nCheck your internet connection and run Start again.`nLog: $logPath", 'T-BCM') | Out-Null
