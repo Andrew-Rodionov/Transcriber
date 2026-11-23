@@ -1,6 +1,9 @@
 # Виртуальное окружение
 whispX_venv/
 .venv/
+.venv-desktop/
+.desktop-data/
+del/
 venv/
 env/
 ENV/
@@ -24,7 +27,9 @@ __pycache__/
 results/
 uploads/
 outputs/
-Voice/
+WORD_FILE/
+del/
+tests/
 *.json
 *.log
 *.mp3
